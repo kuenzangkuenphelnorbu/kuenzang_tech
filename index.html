@@ -1,71 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Self-Portrait & Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- Theme Toggle Floating Button -->
-    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+<!--
+  ============================================================
+  PORTFOLIO TEMPLATE (CYAN THEME)
+  ============================================================
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="portfolio-card">
-      <!-- Profile Header -->
-      <header class="profile-header">
-        <div class="avatar-container">
-          <img
-            src="https://api.dicebear.com/10.x/voxel-bot/svg?seed=Felix"
-            alt="Profile Avatar"
-            id="avatar"
-          />
-        </div>
-        <h1 id="student-name">Jenny</h1>
-        <p class="title" id="student-title">
-          Grade 12 Web Developer & Tech Enthusiast
-        </p>
-        <p class="bio" id="student-bio">
-          Passionate about coding clean interfaces, exploring cloud
-          technologies, and learning database management.
-        </p>
-      </header>
+    <title>Kuenzang Kuenphel Norbu</title>
+    <meta name="description" content="A relentless problem solver driven by curiosity, precision, and an unyielding commitment to excellence.">
+    <meta name="author" content="Kuenzang Kuenphel Norbu">
+    <meta name="theme-color" content="#09171a">
 
-      <!-- Interactive Skills Section -->
-      <section class="skills-section">
-        <h3>Tech Stack & Skills</h3>
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-category="all">All</button>
-          <button class="filter-btn" data-category="frontend">Frontend</button>
-          <button class="filter-btn" data-category="tools">Tools</button>
-          <button class="filter-btn" data-category="database">Database</button>
-        </div>
-        <div class="skills-grid" id="skills-container">
-          <!-- Skills dynamically rendered via script.js -->
-        </div>
-      </section>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kuenzang Kuenphel Norbu">
+    <meta property="og:description" content="A relentless problem solver driven by curiosity, precision, and an unyielding commitment to excellence.">
+    <meta name="twitter:card" content="summary_large_image">
 
-      <!-- Guestbook / SQL Data Section (Prepared for Class C) -->
-      <section class="guestbook-section">
-        <h3>Visitor Guestbook</h3>
-        <div id="guestbook-entries" class="guestbook-list">
-          <p class="loading-text">
-            Connect to database in Class C to load messages...
-          </p>
-        </div>
-      </section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-      <!-- Footer Links -->
-      <footer class="profile-footer">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-          >GitHub Profile</a
-        >
-        <span>•</span>
-        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer"
-          >Live Site</a
-        >
-      </footer>
+    <link rel="stylesheet" href="style.css">
+
+    <noscript>
+        <style>
+            #intro { display: none; }
+            .reveal, .reveal-scale { opacity: 1; transform: none; }
+            .hero-avatar, .hero-greeting, .hero-sub, .hero-tagline, .hero-actions, .scroll-indicator { opacity: 1; transform: none; }
+            .nav { transform: translateY(0); border-bottom-color: var(--border); }
+        </style>
+    </noscript>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox-modal" aria-hidden="true">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Fullscreen Project View">
     </div>
 
-    <script src="js/main.js"></script>
-  </body>
-</html>
+    <!-- Spinning Cube Container -->
+    <div class="cube-wrapper" aria-hidden="true">
+        <div class="cube">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+        </div>
+    </div>
+
+    <div id="intro" role="presentation">
+        <div class="grain"></div>
+        <div class="intro-line-top"></div>
+        <div class="intro-name" id="introName" data-name="Kuenzang Kuenphel Norbu" aria-hidden="true"></div>
+        <div class="intro-subtitle">Portfolio</div>
+        <div class="intro-progress"></div>
+        <div class="intro-skip">Click to skip</div>
+        <div class="intro-line-bottom"></div>
+    </div>
+
+    <nav class="nav" id="nav">
+        <a href="#top" class="nav-mark">KKN</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="top">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+
+            <div class="hero-avatar" aria-hidden="true">KKN</div>
+
+            <h1 class="hero-greeting">Hi, I'm Kuenzang Kuenphel Norbu</h1>
+            <p class="hero-sub">Thimphu, Bhutan</p>
+            <p class="hero-tagline">A relentless problem solver driven by curiosity, precision, and an unyielding commitment to excellence.</p>
+
+            <div class="hero-actions">
+                <a href="#work" class="btn">
+                    See my work
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="#" class="btn btn-ghost">View CV</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span></span>
+            <p>Scroll</p>
+        </div>
+    </section>
+
+    <main id="main">
+
+    <section class="section" id="about">
+        <div class="reveal">
+            <div class="section-label">About</div>
+        </div>
+
+        <h2 class="section-title reveal" style="transition-delay:0.08s">
+            A relentless problem solver driven by curiosity, precision, and an unyielding commitment to excellence.
+        </h2>
+
+        <div class="section-text reveal" style="transition-delay:0.16s">
+            <p>By leaning into genuine curiosity and learning from every person I've crossed paths with, I've unlocked doors I never knew existed, turning everyday interactions into stepping stones. That relentless drive to understand the world and connect with others is what shaped my journey so far and it's far from over. With an unwavering commitment to constant growth, I am always looking forward, eager to refine my craft, embrace new challenges, and keep evolving into a better version of myself every single day.</p>
+            <p>Most of what I've learned to date is self-taught, and it is the best part of my journey. I am continuously learning how to learn and adapt, which is the most important skill of all.</p>
+        </div>
+
+        <div class="toolkit reveal" style="transition-delay:0.24s">
+            <h3>Building with</h3>
+            <div class="toolkit-row">
+                <span class="tool">Machine Learning</span>
+                <span class="tool">Data Science</span>
+                <span class="tool">Coding</span>
+                <span class="tool">Mathematics</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
