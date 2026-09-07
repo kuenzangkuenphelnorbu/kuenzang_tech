@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Self-Portrait & Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Floating Button -->
+    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+
+    <div class="portfolio-card">
+      <!-- Profile Header -->
+      <header class="profile-header">
+        <div class="avatar-container">
+          <img
+            src="https://api.dicebear.com/10.x/voxel-bot/svg?seed=Felix"
+            alt="Profile Avatar"
+            id="avatar"
+          />
+        </div>
+        <h1 id="student-name">Jenny</h1>
+        <p class="title" id="student-title">
+          Grade 12 Web Developer & Tech Enthusiast
+        </p>
+        <p class="bio" id="student-bio">
+          Passionate about coding clean interfaces, exploring cloud
+          technologies, and learning database management.
+        </p>
+      </header>
+
+      <!-- Interactive Skills Section -->
+      <section class="skills-section">
+        <h3>Tech Stack & Skills</h3>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="frontend">Frontend</button>
+          <button class="filter-btn" data-category="tools">Tools</button>
+          <button class="filter-btn" data-category="database">Database</button>
+        </div>
+        <div class="skills-grid" id="skills-container">
+          <!-- Skills dynamically rendered via script.js -->
+        </div>
+      </section>
+
+      <!-- Guestbook / SQL Data Section (Prepared for Class C) -->
+      <section class="guestbook-section">
+        <h3>Visitor Guestbook</h3>
+        <div id="guestbook-entries" class="guestbook-list">
+          <p class="loading-text">
+            Connect to database in Class C to load messages...
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer Links -->
+      <footer class="profile-footer">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          >GitHub Profile</a
+        >
+        <span>•</span>
+        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer"
+          >Live Site</a
+        >
+      </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
